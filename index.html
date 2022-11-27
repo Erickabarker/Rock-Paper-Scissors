@@ -12,14 +12,42 @@
     <div id="heading">
         <h1>Rock Paper Scissors</h1>
     </div>
-
+    <!-- score display -->
+    <div id="scores">
+        <span id = "user-score">0</span>
+        <span> : </span>
+        <span id = "computer-score">0</span>
+    </div>
+  
     <h3>Pick your poison</h3>
 
     <div id="choice">
         <button id="rock" class="choice-button"><img src="assets/images/rock-cartoon.jpg" alt="Rock icon"></button>
         <button id="paper" class="choice-button"><img src="assets/images/paper-cartoon.png" alt="Paper icon"></button>
         <button id="scissors" class="choice-button"><img src="assets/images/scissors-cartoon.png"alt="Scissors icon"></button>
+    </div>  
+
+    <div id="gamePlay">
+        <span>You chose: </span>
+        <span>The computer chose: </span>
+        <span>User's choice: </span><span id="user-choice"></span>
+        <span>Computer's choice: </span><span id="computer-choice"></span>
     </div>
+
+        <!-- display result -->
+        <div>Result:
+            <span id="result"></span>
+        </div>
+    
+        <!-- How to Play -->
+        <div>
+            <h4>Rules</h4>
+            <p>Rock crushes Scissors</p>
+            <p> Scissors cuts Paper </p>
+            <p>Paper covers Rock</p>
+        </div>
+        
+        <script src ="assets/js/script.js"></script>
 
 </body>
 </html>
