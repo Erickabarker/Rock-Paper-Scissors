@@ -20,16 +20,34 @@ function play(playerSelection){
  let playerChoice = document.getElementById("playerChoice");
  playerChoice.innerHTML = `You Selected: $(playerChoice)`;
 
- return playerSelection
+ returnResult(playerSelection);
 }
 
 function play(computerSelection){
     let computerChoice = document.getElementById("computerChoice");
-    computerChoice.innerHTML = `The Computer Selected: $(pcomputerChoice)`;
+    computerChoice.innerHTML = `The Computer Selected: $(computerChoice)`;
    
-    return computerSelection
+    returnResult(computerSelection);
    }
 
+function returnResult(playerChoice, computerChoice) {
+    if (playerChoice === computerChoice){
+    result.innerHTML = "It's a Draw";
+   } else if (playerChoice === "rock", computerChoice === "scissors") {
+    result.innerHTML = "You Win!!"
+   }else if (playerChoice === "rock", computerChoice === "paper"){
+    result.innerHTML = "You Lost!"
+   } else if (playerChoice === "paper", computerChoice === "scissors"){
+    result.innerHTML = "You Lost!"   
+   } else if (playerChoice === "paper", computerChoice === "rock"){
+    result.innerHTML = "You Lost!"
+   } else if (playerChoice === "scissors", computerChoice === "rock"){
+   result.innerHTML = "You Lost!"
+   } else if (playerChoice === "scissors", computerChoice === "paper"){
+    result.innerHTML = "You Win!"
+   }
+
+}
 
 
 scissors.addEventListener("click", function (){
