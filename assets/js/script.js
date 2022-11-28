@@ -23,6 +23,14 @@ function play(playerSelection){
  return playerSelection
 }
 
+function play(computerSelection){
+    let computerChoice = document.getElementById("computerChoice");
+    computerChoice.innerHTML = `The Computer Selected: $(pcomputerChoice)`;
+   
+    return computerSelection
+   }
+
+
 
 scissors.addEventListener("click", function (){
     var playerChoice = document.getElementById("playerChoice");
