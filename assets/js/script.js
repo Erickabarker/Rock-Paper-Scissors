@@ -2,16 +2,16 @@ const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
 const scissors = document.getElementById("scissors");
 const choicebutton = [rock, paper, scissors];
-
+const playerScore = 0;
+const computerScore = 0; 
 
 let computerChoice = document.getElementById("computerChoice");
 let option = document.getElementById("choicebutton")
 
 
 function createComDecision(){
-    const selection = ['rock', 'paper', 'scissors'];
-    const randomChoice = (Math.random()*3);
-    return selection[randomChoice];
+    const randomChoice = Math.Floor(Math.random() * 3);
+    return choicebutton[randomChoice];
 }
 
 computerChoice = `Computers Choice ${createComDecision()}`;
@@ -23,6 +23,13 @@ function play(playerSelection){
  returnResult(playerSelection);
 }
 
+const displayScoreResults = () => {
+    let playerScoreResults = document.getElementById("playerScore");
+    playerScoreResults.innerHTML = playerScore;
+    let computerScoreResults = document.getElementById("computerScore");
+    computerScoreResults.innerHTML = computerScore;
+}
+
 function play(computerSelection){
     let computerChoice = document.getElementById("computerChoice");
     computerChoice.innerHTML = `The Computer Selected: $(computerChoice)`;
@@ -32,19 +39,32 @@ function play(computerSelection){
 
 function returnResult(playerChoice, computerChoice) {
     if (playerChoice === computerChoice){
-    result.innerHTML = "It's a Draw";
+    result.innerHTML = "It's a Draw! Let's Try Again";
+    displayScoreResults()
    } else if (playerChoice === "rock", computerChoice === "scissors") {
     result.innerHTML = "You Win!!"
+    playerScore++;
+    displayScoreResults()
    }else if (playerChoice === "rock", computerChoice === "paper"){
-    result.innerHTML = "You Lost!"
+    result.innerHTML = "You Lost! Let's Try Again"
+    computerScore++;
+    displayScoreResults()
    } else if (playerChoice === "paper", computerChoice === "scissors"){
-    result.innerHTML = "You Lost!"   
+    result.innerHTML = "You Lost! Let's Try Again"  
+    computerScore++; 
+    displayScoreResults()
    } else if (playerChoice === "paper", computerChoice === "rock"){
-    result.innerHTML = "You Lost!"
+    result.innerHTML = "You Win!!"
+    playerScore++;
+    displayScoreResults()
    } else if (playerChoice === "scissors", computerChoice === "rock"){
-   result.innerHTML = "You Lost!"
+   result.innerHTML = "You Lost! Let's Try Again"
+   computerScore++;
+   displayScoreResults()
    } else if (playerChoice === "scissors", computerChoice === "paper"){
-    result.innerHTML = "You Win!"
+    result.innerHTML = "You Win!!"
+    playerScore++;
+    displayScoreResults()
    }
 
 }
