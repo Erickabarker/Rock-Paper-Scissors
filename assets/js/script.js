@@ -11,4 +11,22 @@ function createComDecision(){
     return choiceOptions[randomChoice];
 }
 
-computerChoice.innerHTML = createComDecision();
+computerChoice = `Computers Choice ${createComDecision()}`;
+
+scissors.addEventListener("click", function (){
+    var userChoice = document.getElementById("userChoice");
+    userChoice.innerHTML = "You chose scissors!"
+
+})
+
+rock.addEventListener("click", function (){
+    var userChoice = document.getElementById("userChoice");
+    userChoice.innerHTML = "You chose Rock!"
+
+})
+
+paper.addEventListener("click", function (){
+    var userChoice = document.getElementById("userChoice");
+    userChoice.innerHTML = "You chose Paper!"
+
+})
