@@ -12,33 +12,34 @@
 </head>
 <body>
     
-    <div id="heading">
+    <div id="heading" class="text-center">
         <h1>Rock Paper Scissors</h1>
     </div>
 
             <!-- How to Play -->
-            <div id = "rules">
+            <div id = "rules" class="text-center">
                 <h4>Rules</h4>
                 <p>Rock crushes Scissors</p>
                 <p>Scissors cuts through Paper </p>
                 <p>Paper covers Rock</p>
             </div>
+        <h3 class="text-center">Pick your poison</h3>
 
     <!-- score display -->
-    <div id="scores">
-        <span id = "playerScore">0</span>
-        <span> : </span>
+    <div id="scores" class = "text-center">
+        <span>Your Score: </span> 
+        <span id = "playerScore">0</span><br>
+        <span> Computers Score: </span>
         <span id = "computerScore">0</span>
     </div>
-  
-    <h3>Pick your poison</h3>
+    
 <!--options for player-->
-    <div id="choice">
-        <button id="rock" class="choicebutton"><img src="assets/images/rock-cartoon.jpg" alt="Rock icon"></button>
-        <button id="paper" class="choicebutton"><img src="assets/images/paper-cartoon.png" alt="Paper icon"></button>
-        <button id="scissors" class="choicebutton"><img src="assets/images/scissors-cartoon.png"alt="Scissors icon"></button>
+    <div id="choice" class="text-center">
+        <button id="rock" class="choicebutton"><img src="assets/images/rock-icon.png" alt="Rock icon"></button>
+        <button id="paper" class="choicebutton"><img src="assets/images/paper-icon.png" alt="Paper icon"></button>
+        <button id="scissors" class="choicebutton"><img src="assets/images/scissors-icon.png"alt="Scissors icon"></button>
     </div>  
-
+<div class = "results">
     <div id="gamePlay">
 
         <span>Players's choice: </span><span id="playerChoice"></span><br>
@@ -46,12 +47,15 @@
     </div>
 
         <!-- display result -->
-        <div id="results-container">Result:
+        <div id="results-container" class="text-center">Result:
             <span id="result"></span>
         </div>
-    <div class="Reset">
-            <button id = "resetGame">Restart Game</button>
+    </div>
+
+    <div class="Reset text-center">
+            <input type="reset" id = "gameReset" value = "Restart Game"/>
 </div>
+
 
         <script src ="assets/js/script.js"></script>
 

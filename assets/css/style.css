@@ -2,14 +2,24 @@ body{
     background-color: rgba(231, 229, 229, 0.855);
 }
 
-#heading {
-    font-size: 350%;
+.text-center{
     text-align: center;
 }
 
+h3 {
+    font-size: 240%;
+}
+
+#heading {
+    font-size: 350%;
+}
+
 #rules{
-    text-align: center;
     font-size: 150%;
+}
+
+#scores{
+    font-size: 125%;
 }
 
 #choice{
@@ -18,4 +28,37 @@ body{
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
+}
+
+#rock{
+    padding: 20px;
+}
+
+#paper {
+    padding: 20px;
+}
+
+#scissors{
+    padding:20px;
+}
+
+#results-container{
+    font-size: 175%;
+}
+
+.results{
+    font-size: 200%;
+}
+
+#gamePlay{
+    text-align: center;
+}
+
+input[type=reset] {
+    margin-top: 75px;
+    margin-bottom: 0.5rem;
+    padding: 10px;
+    font-size: 25px;
+    border: dotted;
+    border-radius: 50%;
 }

@@ -13,7 +13,7 @@ function createComSelection(){
 }
 
 function play(playerChoice) {
-    let computerChoice = createComSelection();
+    let computerChoice = choicebutton[""];
     returnResult(playerChoice, computerChoice);
 
 }
@@ -59,11 +59,9 @@ function returnResult(playerChoice, computerChoice) {
 
 }
 
-
 scissors.addEventListener("click", function (){
     let playerChoice = document.getElementById("playerChoice");
     playerChoice.innerHTML = "You chose scissors!"
-
 })
 
 rock.addEventListener("click", function (){
@@ -76,13 +74,13 @@ paper.addEventListener("click", function (){
     playerChoice.innerHTML = "You chose Paper!"
 })
 
-document.getElementById("resetGame").addEventListener("click", function() {
+document.getElementsByClassName("Reset").reset; {
     gameReset();
- });
-
-function gameReset() {
-    playerScore.innerText = 0;
-    computerScore.innerText = 0;
+ };
+ function gameReset() {
+    playerScore.innerText === playerScoreResults;
+    computerScore.innerText === computerScoreResults;
     result.innerHTML = "Game Reset!";
-    document.getElementById("resetGame");
+    document.getElementsByClassName("Reset");
 }
+
