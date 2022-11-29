@@ -18,9 +18,8 @@ h3 {
     font-size: 150%;
 }
 
-#scores{
-    font-size: 125%;
-}
+
+
 
 #choice{
     background: coral;
@@ -42,16 +41,8 @@ h3 {
     padding:20px;
 }
 
-#results-container{
-    font-size: 175%;
-}
-
-.results{
-    font-size: 200%;
-}
-
-#gamePlay{
-    text-align: center;
+.winnertally{
+    font-size: 150%;
 }
 
 input[type=reset] {

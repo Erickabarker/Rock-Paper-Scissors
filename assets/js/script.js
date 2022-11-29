@@ -20,9 +20,9 @@ function play(playerChoice) {
 
 const displayScoreResults = () => {
     let playerScoreResults = document.getElementById("playerScore");
-    playerScoreResults.innerHTML = playerScore;
+    playerScoreResults.innerHTML = playerScore++;
     let computerScoreResults = document.getElementById("computerScore");
-    computerScoreResults.innerHTML = computerScore;
+    computerScoreResults.innerHTML = computerScore++;
 }
 
 
@@ -78,8 +78,8 @@ document.getElementsByClassName("Reset").reset; {
     gameReset();
  };
  function gameReset() {
-    playerScore.innerText === playerScoreResults;
-    computerScore.innerText === computerScoreResults;
+    playerScore.innerText = 0;
+    computerScore.innerText = 0;
     result.innerHTML = "Game Reset!";
     document.getElementsByClassName("Reset");
 }

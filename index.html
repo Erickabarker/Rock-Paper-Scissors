@@ -18,32 +18,39 @@
 
             <!-- How to Play -->
             <div id = "rules" class="text-center">
-                <h4>Rules</h4>
+
+                <h3>Rules</h3>
+
                 <p>Rock crushes Scissors</p>
                 <p>Scissors cuts through Paper </p>
                 <p>Paper covers Rock</p>
             </div>
-        <h3 class="text-center">Pick your poison</h3>
 
-    <!-- score display -->
-    <div id="scores" class = "text-center">
-        <span>Your Score: </span> 
-        <span id = "playerScore">0</span><br>
-        <span> Computers Score: </span>
-        <span id = "computerScore">0</span>
-    </div>
+        <h3 class="text-center">What is your weapon of choice?</h3>
+
+
     
 <!--options for player-->
     <div id="choice" class="text-center">
         <button id="rock" class="choicebutton"><img src="assets/images/rock-icon.png" alt="Rock icon"></button>
         <button id="paper" class="choicebutton"><img src="assets/images/paper-icon.png" alt="Paper icon"></button>
         <button id="scissors" class="choicebutton"><img src="assets/images/scissors-icon.png"alt="Scissors icon"></button>
-    </div>  
-<div class = "results">
+    </div> 
+<div class = "winnertally">
+    
+    <div class = "results text-center">
     <div id="gamePlay">
 
         <span>Players's choice: </span><span id="playerChoice"></span><br>
         <span>Computer's choice: </span><span id="computerChoice"></span><br>
+    </div>
+
+    <!-- score display -->
+    <div id="scores" class = "text-center">
+        <span>Your Score: </span> <br>
+        <span id = "playerScore">0</span><br>
+        <span> Computers Score: </span><br>
+        <span id = "computerScore">0</span>
     </div>
 
         <!-- display result -->
@@ -51,7 +58,7 @@
             <span id="result"></span>
         </div>
     </div>
-
+</div>
     <div class="Reset text-center">
             <input type="reset" id = "gameReset" value = "Restart Game"/>
 </div>
