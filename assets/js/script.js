@@ -1,21 +1,23 @@
 const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
 const scissors = document.getElementById("scissors");
-const choicebutton = ['rock', 'paper', 'scissors'];
+const choicebutton = ["rock", "paper", "scissors"];
 const playerScore = 0;
 const computerScore = 0; 
 
 function createComSelection(){
-    const randomChoice = Math.Floor(Math.random() * 3);
-    return choicebutton[randomChoice];
+    const randomChoice = Math.Floor(Math.random() * choicebutton);
+   returnResult(choicebutton(randomChoice));
+
+
 }
 
-function play(computerSelection){
-    let computerChoice = document.getElementById("computerChoice");
-    computerChoice.innerHTML = `The Computer Selected: $(computerChoice)`;
-   
-    returnResult(computerSelection);
-   }
+function play(playerChoice) {
+    let computerChoice = createComSelection();
+    returnResult(playerChoice, computerChoice);
+
+}
+
 const displayScoreResults = () => {
     let playerScoreResults = document.getElementById("playerScore");
     playerScoreResults.innerHTML = playerScore;
@@ -59,19 +61,28 @@ function returnResult(playerChoice, computerChoice) {
 
 
 scissors.addEventListener("click", function (){
-    var playerChoice = document.getElementById("playerChoice");
+    let playerChoice = document.getElementById("playerChoice");
     playerChoice.innerHTML = "You chose scissors!"
 
 })
 
 rock.addEventListener("click", function (){
-    var playerChoice = document.getElementById("playerChoice");
+    let playerChoice = document.getElementById("playerChoice");
     playerChoice.innerHTML = "You chose Rock!"
-
 })
 
 paper.addEventListener("click", function (){
-    var playerChoice = document.getElementById("playerChoice");
+    let playerChoice = document.getElementById("playerChoice");
     playerChoice.innerHTML = "You chose Paper!"
-
 })
+
+document.getElementById("resetGame").addEventListener("click", function() {
+    gameReset();
+ });
+
+function gameReset() {
+    playerScore.innerText = 0;
+    computerScore.innerText = 0;
+    result.innerHTML = "Game Reset!";
+    document.getElementById("resetGame");
+}

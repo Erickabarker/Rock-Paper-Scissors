@@ -1,0 +1,21 @@
+body{
+    background-color: rgba(231, 229, 229, 0.855);
+}
+
+#heading {
+    font-size: 350%;
+    text-align: center;
+}
+
+#rules{
+    text-align: center;
+    font-size: 150%;
+}
+
+#choice{
+    background: coral;
+    display: block;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
