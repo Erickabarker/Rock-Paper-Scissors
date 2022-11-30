@@ -2,23 +2,23 @@ const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
 const scissors = document.getElementById("scissors");
 const choicebutton = ["rock", "paper", "scissors"];
-const playerScore = 0;
-const computerScore = 0; 
+let playerScore = 0;
+let computerScore = 0;
 
 function createComSelection(){
-    const randomChoice = Math.Floor(Math.random() * choicebutton);
-   returnResult(choicebutton(randomChoice));
-
-
+    let randomChoice = choicebutton[Math.floor(Math.random() * 3)]
+    console.log(randomChoice, playerChoice)
+    computerChoice.innerHTML = randomChoice;
+    console.log("createComSelection:", randomChoice, computerChoice)
+    return randomChoice
 }
 
 function play(playerChoice) {
     let computerChoice = choicebutton[""];
     returnResult(playerChoice, computerChoice);
-
 }
 
-const displayScoreResults = () => {
+let displayScoreResults = () => {
     let playerScoreResults = document.getElementById("playerScore");
     playerScoreResults.innerHTML = playerScore++;
     let computerScoreResults = document.getElementById("computerScore");
@@ -28,6 +28,7 @@ const displayScoreResults = () => {
 
 
 function returnResult(playerChoice, computerChoice) {
+    console.log("returnResult:", playerChoice, computerChoice)
     if (playerChoice === computerChoice){
     result.innerHTML = "It's a Draw! Let's Try Again";
     displayScoreResults()
@@ -62,25 +63,31 @@ function returnResult(playerChoice, computerChoice) {
 scissors.addEventListener("click", function (){
     let playerChoice = document.getElementById("playerChoice");
     playerChoice.innerHTML = "You chose scissors!"
+    createComSelection();
+    returnResult(playerChoice, computerChoice);
 })
 
 rock.addEventListener("click", function (){
     let playerChoice = document.getElementById("playerChoice");
     playerChoice.innerHTML = "You chose Rock!"
+    createComSelection();
+    returnResult();
 })
 
 paper.addEventListener("click", function (){
     let playerChoice = document.getElementById("playerChoice");
     playerChoice.innerHTML = "You chose Paper!"
+    createComSelection();
+    returnResult();
 })
 
 document.getElementsByClassName("Reset").reset; {
     gameReset();
  };
+
  function gameReset() {
     playerScore.innerText = 0;
     computerScore.innerText = 0;
     result.innerHTML = "Game Reset!";
     document.getElementsByClassName("Reset");
 }
-
