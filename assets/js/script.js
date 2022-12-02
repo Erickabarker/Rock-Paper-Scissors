@@ -5,54 +5,48 @@ const choicebutton = ["rock", "paper", "scissors"];
 let playerScore = 0;
 let computerScore = 0;
 
+// function creates computer random selection
 function createComSelection(){
     let randomChoice = choicebutton[Math.floor(Math.random() * 3)]
     console.log(randomChoice, playerChoice)
     computerChoice.innerHTML = randomChoice;
-    console.log("createComSelection:", randomChoice, computerChoice)
+    console.log("createComSelection:", randomChoice, computerChoice)// 
     return randomChoice
 }
 
-function play(playerChoice) {
-    let computerChoice = choicebutton[""];
-    returnResult(playerChoice, computerChoice);
-}
-
 let displayScoreResults = () => {
-    let playerScoreResults = document.getElementById("playerScore");
+   let playerScoreResults = document.getElementById("playerScore");
     playerScoreResults.innerHTML = playerScore++;
     let computerScoreResults = document.getElementById("computerScore");
     computerScoreResults.innerHTML = computerScore++;
 }
 
-
-
 function returnResult(playerChoice, computerChoice) {
     console.log("returnResult:", playerChoice, computerChoice)
     if (playerChoice === computerChoice){
     result.innerHTML = "It's a Draw! Let's Try Again";
-    displayScoreResults()
-   } else if (playerChoice === "rock", computerChoice === "scissors") {
+    //displayScoreResults()
+   } else if (playerChoice === "rock" && computerChoice === "scissors") {
     result.innerHTML = "You Win!!"
     playerScore++;
     displayScoreResults()
-   }else if (playerChoice === "rock", computerChoice === "paper"){
+   }else if (playerChoice === "rock" && computerChoice === "paper"){
     result.innerHTML = "You Lost! Let's Try Again"
     computerScore++;
     displayScoreResults()
-   } else if (playerChoice === "paper", computerChoice === "scissors"){
+   } else if (playerChoice === "paper" && computerChoice === "scissors"){
     result.innerHTML = "You Lost! Let's Try Again"  
     computerScore++; 
     displayScoreResults()
-   } else if (playerChoice === "paper", computerChoice === "rock"){
+   } else if (playerChoice === "paper" && computerChoice === "rock"){
     result.innerHTML = "You Win!!"
     playerScore++;
     displayScoreResults()
-   } else if (playerChoice === "scissors", computerChoice === "rock"){
+   } else if (playerChoice === "scissors" && computerChoice === "rock"){
    result.innerHTML = "You Lost! Let's Try Again"
    computerScore++;
    displayScoreResults()
-   } else if (playerChoice === "scissors", computerChoice === "paper"){
+   } else if (playerChoice === "scissors" && computerChoice === "paper"){
     result.innerHTML = "You Win!!"
     playerScore++;
     displayScoreResults()
