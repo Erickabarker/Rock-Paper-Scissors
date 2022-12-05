@@ -45,7 +45,7 @@ h3 {
     font-size: 150%;
 }
 
-input[type=reset] {
+.gameResetButton {
     margin-top: 75px;
     margin-bottom: 0.5rem;
     padding: 10px;

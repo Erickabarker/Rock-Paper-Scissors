@@ -10,78 +10,98 @@ function createComSelection(){
     let randomChoice = choicebutton[Math.floor(Math.random() * 3)]
     console.log(randomChoice, playerChoice)
     computerChoice.innerHTML = randomChoice;
-    console.log("createComSelection:", randomChoice, computerChoice)// 
+    console.log("createComSelection:", randomChoice, computerChoice)
     return randomChoice
 }
 
-let displayScoreResults = () => {
+function displayScoreResults(){
    let playerScoreResults = document.getElementById("playerScore");
     playerScoreResults.innerHTML = playerScore++;
     let computerScoreResults = document.getElementById("computerScore");
     computerScoreResults.innerHTML = computerScore++;
+    console.log("displayScoreResults");
+}
+//Function checks whether player or computer will win
+
+function returnResult(playerChoice, computerHTML) {
+    (computerHTML == "rock")
+if (playerChoice == "paper"){
+returnResult.innerHTML = "You Win! Let's go Again"
+} else if (playerChoice == "rock"){
+    returnResult = "It's a draw, Let's Try Again!"
+} else if (playerChoice == "scissors"){
+    returnResult.innerHTML = "You Lost! Let's Try Again!"
+}
+    (computerHTML == "paper")
+if (playerChoice == "rock"){
+returnResult.innerHTML = "You Lost! Let's Try Again!"
+} else if (playerChoice == "paper"){
+    returnResult = "It's a draw, Let's Try Again!"
+} else if (playerChoice == "scissors"){
+    returnResult.innerHTML = "You Win! Let's go Again"
+}
+    (computerHTML == "scissors")
+if (playerChoice == "rock"){
+returnResult.innerHTML = "You Win! Let's go Again"
+} else if (playerChoice == "paper"){
+    returnResult = "You Lost! Let's Try Again!"
+} else if (playerChoice == "scissors"){
+    returnResult.innerHTML = "It's a draw, Let's Try Again!"
 }
 
-function returnResult(playerChoice, computerChoice) {
-    console.log("returnResult:", playerChoice, computerChoice)
-    if (playerChoice === computerChoice){
-    result.innerHTML = "It's a Draw! Let's Try Again";
-    //displayScoreResults()
-   } else if (playerChoice === "rock" && computerChoice === "scissors") {
-    result.innerHTML = "You Win!!"
-    playerScore++;
-    displayScoreResults()
-   }else if (playerChoice === "rock" && computerChoice === "paper"){
-    result.innerHTML = "You Lost! Let's Try Again"
-    computerScore++;
-    displayScoreResults()
-   } else if (playerChoice === "paper" && computerChoice === "scissors"){
-    result.innerHTML = "You Lost! Let's Try Again"  
-    computerScore++; 
-    displayScoreResults()
-   } else if (playerChoice === "paper" && computerChoice === "rock"){
-    result.innerHTML = "You Win!!"
-    playerScore++;
-    displayScoreResults()
-   } else if (playerChoice === "scissors" && computerChoice === "rock"){
-   result.innerHTML = "You Lost! Let's Try Again"
-   computerScore++;
-   displayScoreResults()
-   } else if (playerChoice === "scissors" && computerChoice === "paper"){
-    result.innerHTML = "You Win!!"
-    playerScore++;
-    displayScoreResults()
-   }
-
+displayScoreResults();
+console.log(playerScore, computerScore);
 }
 
+/*Event listeners for user choice input
+* createComSelection and returnResult is called here
+*/
 scissors.addEventListener("click", function (){
-    let playerChoice = document.getElementById("playerChoice");
-    playerChoice.innerHTML = "You chose scissors!"
+    let playerHTML = document.getElementById("playerChoice");
+    playerHTML.innerHTML = "You chose scissors!"
+    playerChoice = "scissors"
+
+    let computerHTML = document.getElementById("computerChoice");
+    computerHTML.innHTML = "Computer chose Scissors"
     createComSelection();
-    returnResult(playerChoice, computerChoice);
+    returnResult();
 })
 
+
 rock.addEventListener("click", function (){
-    let playerChoice = document.getElementById("playerChoice");
-    playerChoice.innerHTML = "You chose Rock!"
+    let playerHTML = document.getElementById("playerChoice");
+    playerHTML.innerHTML = "You chose Rock!"
+    playerChoice = "rock"
+
+    let computerHTML = document.getElementById("computerChoice");
+    computerHTML.innerHTML = "Computer chose Rock!"
+    computerHTML = "rock"
+
     createComSelection();
     returnResult();
 })
 
 paper.addEventListener("click", function (){
-    let playerChoice = document.getElementById("playerChoice");
-    playerChoice.innerHTML = "You chose Paper!"
+    let playerHTML = document.getElementById("playerChoice");
+    playerHTML.innerHTML = "You chose Paper!"
+    playerChoice = "paper"
+
+    let computerHTML = document.getElementById("computerChoice");
+    computerHTML.innerHTML = "Computer chose paper!"
+    computerHTML = "paper"
+
     createComSelection();
     returnResult();
 })
 
-document.getElementsByClassName("Reset").reset; {
+//Game reset button input to restart game
+document.getElementsByClassName("gameResetButton").reset; {
     gameReset();
  };
 
- function gameReset() {
+gameReset.addEventListener("button", function gameReset() {
     playerScore.innerText = 0;
     computerScore.innerText = 0;
-    result.innerHTML = "Game Reset!";
-    document.getElementsByClassName("Reset");
-}
+    returnResult.innerHTML = ("");
+    document.getElementsByClassName("gameResetButton");
+})
