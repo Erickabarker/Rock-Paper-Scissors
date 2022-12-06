@@ -9,8 +9,8 @@ let winner;
 // function creates computer random selection
 function createComSelection() {
     let randomChoice = choicebutton[Math.floor(Math.random() * 3)]
+    computerChoice.innerHTML = randomChoice;    
     console.log(randomChoice, playerChoice)
-    computerChoice.innerHTML = randomChoice;
     return randomChoice
 }
 
@@ -18,9 +18,9 @@ function displayScoreResults(winner) {
     let playerScoreResults = document.getElementById("playerScore");
     let computerScoreResults = document.getElementById("computerScore");
     if (winner = "player") {
-        playerScoreResults.innerHTML = playerScore++;
+        playerScoreResults.innerHTML = playerScore ++;
     } else {
-        computerScoreResults.innerHTML = computerScore++;
+        computerScoreResults.innerHTML = computerScore ++;
     }
     console.log("displayScoreResults", winner)
 }
@@ -28,42 +28,44 @@ function displayScoreResults(winner) {
 //Function checks whether player or computer will win
 
 function returnResult(playerChoice, computerHTML) {
+   computerHTML =  createComSelection();
     if (computerHTML == "rock"){
         if (playerChoice == "paper") {
-        returnResult.innerHTML = "You Win! Let's go Again"
+        result.innerHTML = "You Win! Let's go Again"
         winner = "player";
     } else if (playerChoice == "rock") {
-        returnResult = "It's a draw, Let's Try Again!"
+        result = "It's a draw, Let's Try Again!"
+        winner = "draw";
     } else if (playerChoice == "scissors") {
         returnResult.innerHTML = "You Lost! Let's Try Again!"
         winner = "computer";
-    } }
+    }}
+
     else
     if (computerHTML == "paper"){
         if (playerChoice == "rock") {
-        returnResult.innerHTML = "You Lost! Let's Try Again!"
+        result.innerHTML = "You Lost! Let's Try Again!"
         winner = "computer";
     } else if (playerChoice == "paper") {
-        returnResult = "It's a draw, Let's Try Again!"
+        result = "It's a draw, Let's Try Again!"
+        winner = "draw";
     } else if (playerChoice == "scissors") {
-        returnResult.innerHTML = "You Win! Let's go Again"
-        winner = "player";}
-    
+        result.innerHTML = "You Win! Let's go Again"
+        winner = "player";}    
     } else
         if(computerHTML == "scissors"){
             if (playerChoice == "rock") {
-        returnResult.innerHTML = "You Win! Let's go Again"
+        result.innerHTML = "You Win! Let's go Again"
         winner = "player";
     } else if (playerChoice == "paper") {
-        returnResult = "You Lost! Let's Try Again!"
+        result = "You Lost! Let's Try Again!"
         winner = "computer";
     } else if (playerChoice == "scissors") {
-        returnResult.innerHTML = "It's a draw, Let's Try Again!"
-    }}
-    
-
-
-    displayScoreResults(winner);
+        result.innerHTML = "It's a draw, Let's Try Again!"
+        winner = "draw";
+        }
+}
+        displayScoreResults(winner);
     console.log(playerScore, computerScore, winner)
 }
 
@@ -78,9 +80,8 @@ scissors.addEventListener("click", function () {
     let computerHTML = document.getElementById("computerChoice");
     computerHTML.innHTML = "Computer chose Scissors"
     createComSelection();
-    returnResult();
+    returnResult(playerChoice);
 })
-
 
 rock.addEventListener("click", function () {
     let playerHTML = document.getElementById("playerChoice");
@@ -92,7 +93,7 @@ rock.addEventListener("click", function () {
     computerHTML = "rock"
 
     createComSelection();
-    returnResult();
+    returnResult(playerChoice);
 })
 
 paper.addEventListener("click", function() {
@@ -105,28 +106,30 @@ paper.addEventListener("click", function() {
     computerHTML = "paper"
 
     createComSelection();
-    returnResult();
+    returnResult(playerChoice);
 })
 
 //Game reset button input to restart game
+
+const resetBtn = document.querySelector('.reset-button')
+
+resetBtn.addEventListener('click', (e))
+gameEnd();
+gameReset();
+
 function gameReset() {
     playerScore.innerText = 0;
     computerScore.innerText = 0;
     returnResult.innerHTML = "Game Restarted";
-    document.getElementById("gameReset");
 
 console.log("gameReset");
 }
 
-gameResetButton.addEventListener("click", function() {
-    let gameReset = document.getElementById("gameReset");
-    gameReset.innerHTML = "Game Reset"
+ function gameEnd () {
+    if (playerScore === 5 || computerScore === 5) {
+        playerScore = 0;
+        computerScore = 0;
+        result.innerHTML = winner;
+    }
 
-    gameReset();
-});
-
-document.getElementById("gameReset").addEventListener("click", function() {
-    document.getElementById("gameResetContainer").classList.add("hide");
-gameReset();
- });
-
+}
