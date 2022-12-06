@@ -28,8 +28,8 @@ function displayScoreResults(winner) {
 //Function checks whether player or computer will win
 
 function returnResult(playerChoice, computerHTML) {
-    (computerHTML == "rock")
-    if (playerChoice == "paper") {
+    if (computerHTML == "rock"){
+        if (playerChoice == "paper") {
         returnResult.innerHTML = "You Win! Let's go Again"
         winner = "player";
     } else if (playerChoice == "rock") {
@@ -37,19 +37,21 @@ function returnResult(playerChoice, computerHTML) {
     } else if (playerChoice == "scissors") {
         returnResult.innerHTML = "You Lost! Let's Try Again!"
         winner = "computer";
-    }
-    (computerHTML == "paper")
-    if (playerChoice == "rock") {
+    } }
+    else
+    if (computerHTML == "paper"){
+        if (playerChoice == "rock") {
         returnResult.innerHTML = "You Lost! Let's Try Again!"
         winner = "computer";
     } else if (playerChoice == "paper") {
         returnResult = "It's a draw, Let's Try Again!"
     } else if (playerChoice == "scissors") {
         returnResult.innerHTML = "You Win! Let's go Again"
-        winner = "player";
-    }
-        (computerHTML == "scissors")
-    if (playerChoice == "rock") {
+        winner = "player";}
+    
+    } else
+        if(computerHTML == "scissors"){
+            if (playerChoice == "rock") {
         returnResult.innerHTML = "You Win! Let's go Again"
         winner = "player";
     } else if (playerChoice == "paper") {
@@ -57,7 +59,8 @@ function returnResult(playerChoice, computerHTML) {
         winner = "computer";
     } else if (playerChoice == "scissors") {
         returnResult.innerHTML = "It's a draw, Let's Try Again!"
-    }
+    }}
+    
 
 
     displayScoreResults(winner);
