@@ -1,81 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta description = "Computer vs Player Rock Paper Scissors" keywords="computer vs player, rock paper Scissors">
+    <meta description="Computer vs Player Rock Paper Scissors" keywords="computer vs player, rock paper Scissors">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel ="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <title>Rock Paper Scissors</title>
 
 </head>
+
 <body>
-    
+
     <div id="heading" class="text-center">
         <h1>Rock Paper Scissors</h1>
     </div>
 
-            <!-- How to Play -->
-            <div id = "rules" class="text-center">
+    <!-- How to Play -->
+    <div id="rules" class="text-center">
 
-                <h3>Rules</h3>
+        <h3>Rules</h3>
 
-                <p>Rock crushes Scissors</p>
-                <p>Scissors cuts through Paper </p>
-                <p>Paper covers Rock</p>
-            </div>
+        <p>Rock crushes Scissors</p>
+        <p>Scissors cuts through Paper </p>
+        <p>Paper covers Rock</p>
+    </div>
 
-        <h3 class="text-center">What is your weapon of choice?</h3>
+    <h3 class="text-center">What is your weapon of choice?</h3>
 
 
-    
-<!--options for player-->
+
+    <!--options for player-->
     <div id="choice" class="text-center">
         <button id="rock" class="choicebutton"><img src="assets/images/rock-icon.png" alt="Rock icon"></button>
         <button id="paper" class="choicebutton"><img src="assets/images/paper-icon.png" alt="Paper icon"></button>
-        <button id="scissors" class="choicebutton"><img src="assets/images/scissors-icon.png"alt="Scissors icon"></button>
-    </div> 
-<div class = "winnertally">
-    
-    <div class = "results text-center">
-    <div id="gamePlay">
-
-        <span>Players's choice: </span>
-        <div id="playerChoice"></div><br>
-        <span>Computer's choice: </span>
-        <div id="computerChoice"></div>
-<br>
+        <button id="scissors" class="choicebutton"><img src="assets/images/scissors-icon.png"
+                alt="Scissors icon"></button>
     </div>
+    <div class="winnertally">
 
-    <!-- score display -->
-    <div id="scores" class = "text-center">
-        <span>Your Score: </span><br>
-        <span id = "playerScore">0</span><br>
-        <span> Computers Score: </span><br>
-        <span id = "computerScore">0</span>
-    </div>
+        <div class="results text-center">
+            <div id="gamePlay">
 
-        <!-- display result -->
-        <div id="results-container" class="text-center">Result:
-            <span id="result"></span>
+                <span>Players's choice: </span>
+                <div id="playerChoice"></div><br>
+                <span>Computer's choice: </span>
+                <div id="computerChoice"></div>
+                <br>
+            </div>
+
+            <!-- score display -->
+            <div id="scores" class="text-center">
+                <span>Your Score: </span><br>
+                <span id="playerScore">0</span><br>
+                <span> Computers Score: </span><br>
+                <span id="computerScore">0</span>
+            </div>
+
+            <!-- display result -->
+            <div id="results-container" class="text-center">Result:
+                <span id="result"></span>
+            </div>
         </div>
     </div>
-</div>
-    <div class="text-center">
-            <button id = "gameReset" class = "gameResetButton">"Restart Game"</button>
-</div>
+    <div class="text-center gameResetContainer hide" id = "gameResetContainer">
+        <button id="gameReset" class="gameResetButton">Restart Game</button>
+    </div>
 
+    <script src="assets/js/script.js"></script>
+    <footer>
+        <p>Developed by
+            <a href="https://github.com/Erickabarker/Rock-Paper-Scissors" target="_blank"
+                aria-label="Find me on github(link opens to new tab">Ericka Barker</a>
+        </p>
 
-        <script src ="assets/js/script.js"></script>
-<footer>
-    <p>Developed by
-        <a href="https://github.com/Erickabarker/Rock-Paper-Scissors" target="_blank"
-            aria-label="Find me on github(link opens to new tab">Ericka Barker</a>
-    </p>
+    </footer>
 
-</footer>
-
-</footer>
+    </footer>
 </body>
+
 </html>
